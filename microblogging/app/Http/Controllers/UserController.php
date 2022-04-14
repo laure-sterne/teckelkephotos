@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::all();
-        return view('feed', ['post' => $post]);
-
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class PostController extends Controller
      */
     public function create()
     {
-    //
+        //
     }
 
     /**
@@ -37,51 +35,51 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-    //
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(User $user)
     {
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(User $user)
     {
-    //
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, User $user)
     {
-    //
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(User $user)
     {
-    //
+        //
     }
 }
