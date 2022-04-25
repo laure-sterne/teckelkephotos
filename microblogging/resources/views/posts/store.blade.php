@@ -17,14 +17,14 @@
     Publish here your photo
     </div>
     <div class="card-body">
-      <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{ url('/store') }}">
+      <form name="add-blog-post-form" id="add-blog-post-form" method="POST" action="{{ url('posts') }}">
        @csrf
         <div class="form-group">
-          <label for="User">User</label>
-          <input type="text" id="User" name="User" class="form-control" required="">
+          <label for="user_id">User</label>
+          <input type="text" id="user_id" name="user_id" class="form-control" required="">
         </div>
         <div class="form-group">
-          <label for="Description">Description</label>
+          <label for="description">Description</label>
           <textarea name="description" class="form-control" required=""></textarea>
         </div>
         <div class="form-group">

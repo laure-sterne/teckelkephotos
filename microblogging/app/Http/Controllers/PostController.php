@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
+
 class PostController extends Controller
 {
     /**
@@ -26,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-    //
+        return view('posts.store');
     }
 
     /**
@@ -35,26 +36,47 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string', 'max:500'],
-            'image' => ['required', 'file', 'mimes:jpeg,png', 'max:5000'],
-        ]);
-        $post = Post::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'image' => $request->img_url,
-        ]);
-        // $post->user_id = Auth::id();
+        $post = new Post;
+        $post->user_id = $request->input('user_id');
+        $post->description = $request->input('description');
+        $post->img_url = $request->input('img_url');
+        $post->save();
+        return redirect()->back()->with('status', 'Post Added Successfully');
 
-        return redirect()->route("posts.store")->with('status', 'Post Created');
+    // // Form validation
+    // $this->validate($request, [
+    //     'user_id' => 'required',
+    //     'description' => 'required|description',
+    //     'img_url' => 'required|image',
+    // ]);
+    // //  Store data in database
+    // $post = PostController::create($request->all());
+
+    // $post = new Post;
+    // // 
+    // // return back()->with('success', 'data stored');
+    // return redirect()->route('posts.store');
+    }
+
+
+
+
+
+
+
+
+    // Session::flash('flash_message', 'Task successfully added!');
+
+
 
 
     // return $request
 
-    }
+
 
     /**
      * Display the specified resource.
@@ -63,8 +85,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Post $post)
-    {
-
+    { //
     }
 
     /**
