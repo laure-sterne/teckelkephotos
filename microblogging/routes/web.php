@@ -13,6 +13,7 @@ Route::resource('posts', PostController::class);
 // });
 
 Route::get('/', 'App\Http\Controllers\PostController@index');
+Route::get('/posts', 'App\Http\Controllers\PostController@store');
 
 
 //route for user 

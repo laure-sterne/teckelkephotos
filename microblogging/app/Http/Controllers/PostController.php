@@ -15,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $post = Post::all();
-        return view('feed', ['post' => $post]);
+        return view('posts.index', ['post' => $post]);
 
     }
 
@@ -37,7 +37,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-    //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string', 'max:500'],
+            'image' => ['required', 'file', 'mimes:jpeg,png', 'max:5000'],
+        ]);
+        $post = Post::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $request->img_url,
+        ]);
+        // $post->user_id = Auth::id();
+
+        return redirect()->route("posts.store")->with('status', 'Post Created');
+
+
+    // return $request
+
     }
 
     /**
