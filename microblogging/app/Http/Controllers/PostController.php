@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::all();
+        $post = Post::latest()->get();
         return view('posts.index', ['post' => $post]);
 
     }
@@ -45,7 +45,7 @@ class PostController extends Controller
         $post->description = $request->input('description');
         $post->img_url = $request->input('img_url');
         $post->save();
-        return redirect()->back()->with('status', 'Post Added Successfully');
+        return redirect()->back()->with('status', 'Votre photo est publiée ! ');
 
     // // Form validation
     // $this->validate($request, [

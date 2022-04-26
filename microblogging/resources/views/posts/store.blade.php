@@ -14,24 +14,24 @@
   @endif
   <div class="card">
     <div class="card-header text-center font-weight-bold">
-    Publish here your photo
+    Publies ici tes quelques photos : 
     </div>
     <div class="card-body">
       <form name="add-blog-post-form" id="add-blog-post-form" method="POST" action="{{ url('posts') }}">
        @csrf
         <div class="form-group">
-          <label for="user_id">User</label>
+          <label for="user_id">Nom d'utilisateur</label>
           <input type="text" id="user_id" name="user_id" class="form-control" required="">
         </div>
         <div class="form-group">
-          <label for="description">Description</label>
+          <label for="description">Ta description</label>
           <textarea name="description" class="form-control" required=""></textarea>
         </div>
         <div class="form-group">
-          <label for="img_url">Your image</label>
+          <label for="img_url">Ta photo</label>
           <input type="url" class="form-control" required="" name="img_url">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Publiez</button>
       </form>
     </div>
   </div>
