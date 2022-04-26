@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
           <label for="img_url">Your image</label>
-          <input type="file" class="form-control" required name="image">
+          <input type="url" class="form-control" required="" name="img_url">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

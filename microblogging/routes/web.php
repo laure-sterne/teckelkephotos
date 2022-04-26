@@ -9,9 +9,9 @@ Route::resource('posts', PostController::class);
 
 
 Route::get('/', 'App\Http\Controllers\PostController@index');
-// Route::get('/posts', 'App\Http\Controllers\PostController@store');
-// Route::post('/posts', 'App\Http\Controllers\PostController@store');
+//route pour récupérer les données du formulaire
 Route::get('/posts', [PostController::class , 'store']);
+//route pour envoyer les données du formulaire dans la db
 Route::post('/posts', [PostController::class , 'store'])->name('posts');
 
 
