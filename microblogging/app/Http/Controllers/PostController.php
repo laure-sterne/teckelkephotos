@@ -15,8 +15,11 @@ class PostController extends Controller
      */
     public function index()
     {
+
         $post = Post::latest()->get();
+
         return view('posts.index', ['post' => $post]);
+
 
     }
 
@@ -47,36 +50,7 @@ class PostController extends Controller
         $post->save();
         return redirect()->back()->with('status', 'Votre photo est publiée ! ');
 
-    // // Form validation
-    // $this->validate($request, [
-    //     'user_id' => 'required',
-    //     'description' => 'required|description',
-    //     'img_url' => 'required|image',
-    // ]);
-    // //  Store data in database
-    // $post = PostController::create($request->all());
-
-    // $post = new Post;
-    // // 
-    // // return back()->with('success', 'data stored');
-    // return redirect()->route('posts.store');
     }
-
-
-
-
-
-
-
-
-    // Session::flash('flash_message', 'Task successfully added!');
-
-
-
-
-    // return $request
-
-
 
     /**
      * Display the specified resource.
