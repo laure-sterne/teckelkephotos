@@ -1,3 +1,7 @@
+@guest 
+<p class="flex justify-center">  Connectez-vous pour poster (de jolies teckels) </p>
+
+@else
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,3 +41,6 @@
 </div>  
 </body>
 </html>
+
+
+ @endguest
