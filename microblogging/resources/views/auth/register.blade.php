@@ -15,6 +15,19 @@
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
+            <!-- Image profil -->
+            <div>
+                <x-label for="img_url" :value="__('Img_url')" />
+
+                <x-input id="img_url" class="block mt-1 w-full" type="text" name="img_url" :value="old('img_url')" required autofocus />
+            </div>
+
+            <!-- Biographie -->
+            <div>
+                <x-label for="biography" :value="__('Biography')" />
+
+                <x-input id="biography" class="block mt-1 w-full" type="text" name="biography" :value="old('biography')" required autofocus />
+            </div>
 
             <!-- Email Address -->
             <div class="mt-4">
@@ -51,6 +64,7 @@
                     {{ __('Register') }}
                 </x-button>
             </div>
+
         </form>
     </x-auth-card>
 </x-guest-layout>

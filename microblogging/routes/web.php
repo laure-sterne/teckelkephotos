@@ -13,6 +13,7 @@ Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::get('/posts', [PostController::class , 'store']);
 //route pour envoyer les données du formulaire dans la db
 Route::post('/posts', [PostController::class , 'store'])->name('posts');
+Route::get('/profile', 'App\Http\Controllers\UserController@index');
 
 
 //route for user 

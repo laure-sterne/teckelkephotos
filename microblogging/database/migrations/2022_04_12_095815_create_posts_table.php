@@ -11,14 +11,17 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()    {
+    public function up()
+    {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->text('description');
             $table->string('img_url');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+
             $table->timestamps();
-        });    }
+        });
+    }
 
 
     /**

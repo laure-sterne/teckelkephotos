@@ -1,5 +1,7 @@
+
+
 @guest 
-<p class="flex justify-center">  Connectez-vous pour poster (de jolies teckels) </p>
+<p class="flex justify-center"><button type ="button" class='bg-blue hover:bg-blue text-black font-bold py-2 px-4 rounded'> <a href='/login'>Connectez-vous</a></button class='bg-blue hover:bg-blue text-black font-bold py-2 px-4 rounded'>pour poster (de jolies teckels) et sinon <button> <a href='/register'>  Inscrivez-vous</a></button> </p>
 
 @else
 <!DOCTYPE html>
