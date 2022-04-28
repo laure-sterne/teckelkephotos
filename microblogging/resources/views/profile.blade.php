@@ -6,9 +6,11 @@
 
 @foreach($user as $user)
 @if($user == Auth::user())
+
 <div class="flex justify-start"><p>{{$user->name}}</p></div>
-<div class="flex justify-end"><p>{{$user->biography}}</p></div>
-<div class="flex justify-center"> <img  width ="250px" height="250px" src="{{$user->img_url }}"></div>
+
+<div class="flex justify-end">Biographie : <p>{{$user->biography}}</p></div>
+<div class="flex justify-start">  Photo de profil            <img width ="150px" height="150px" src="{{$user->img_url }}"></div>
 @else
 @endif
 @endforeach
